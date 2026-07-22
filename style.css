@@ -414,10 +414,7 @@ h3 {
   padding: clamp(88px, 14vw, 180px) 24px;
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
-  background:
-    linear-gradient(rgba(3, 3, 3, 0.85), rgba(3, 3, 3, 0.85)),
-    url("assets/images/rov-jewelry-logo.png") center / min(820px, 90vw) no-repeat,
-    var(--near-black);
+  background: var(--near-black);
   text-align: center;
 }
 
@@ -439,10 +436,7 @@ h3 {
 .contact-page {
   min-height: 100vh;
   padding: clamp(138px, 16vw, 210px) clamp(20px, 4vw, 64px) clamp(80px, 10vw, 130px);
-  background:
-    linear-gradient(rgba(3, 3, 3, 0.82), rgba(3, 3, 3, 0.96)),
-    url("assets/images/rov-jewelry-logo.png") right 8vw top 120px / min(520px, 56vw) no-repeat,
-    var(--black);
+  background: var(--black);
 }
 
 .contact-layout {
