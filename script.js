@@ -2,11 +2,18 @@ const header = document.querySelector("[data-header]");
 const navLinks = document.querySelectorAll(".site-nav a");
 const revealElements = document.querySelectorAll(".reveal");
 const sections = [...navLinks]
-  .map((link) => document.querySelector(link.getAttribute("href")))
+  .map((link) => {
+    const href = link.getAttribute("href");
+    return href.startsWith("#") ? document.querySelector(href) : null;
+  })
   .filter(Boolean);
+const contactForm = document.querySelector("#contact-form");
+const formStatus = document.querySelector("#form-status");
 
 const setHeaderState = () => {
-  header.classList.toggle("scrolled", window.scrollY > 24);
+  if (header) {
+    header.classList.toggle("scrolled", window.scrollY > 24);
+  }
 };
 
 const revealObserver = new IntersectionObserver(
@@ -50,6 +57,20 @@ navLinks.forEach((link) => {
     link.classList.add("active");
   });
 });
+
+if (contactForm && formStatus) {
+  contactForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    if (!contactForm.checkValidity()) {
+      contactForm.reportValidity();
+      return;
+    }
+
+    formStatus.textContent = "Thank you. Your inquiry is ready. Connect Roberto's preferred email or form service before publishing.";
+    contactForm.reset();
+  });
+}
 
 setHeaderState();
 window.addEventListener("scroll", setHeaderState, { passive: true });
