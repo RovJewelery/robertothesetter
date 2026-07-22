@@ -4,6 +4,8 @@
   --charcoal: #141414;
   --dark-gray: #222222;
   --mid-gray: #7b7b7b;
+  --gold: #d7ae4f;
+  --soft-gold: #f2d98a;
   --silver: #c9c9c9;
   --soft-silver: #e4e4e4;
   --white: #f8f8f6;
@@ -43,6 +45,15 @@ img {
   max-width: 100%;
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
 .site-header {
   position: fixed;
   top: 0;
@@ -70,8 +81,8 @@ img {
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
-  min-width: 170px;
+  justify-content: center;
+  min-width: 54px;
   color: var(--white);
   font-family: var(--serif);
   font-size: 1.18rem;
@@ -80,11 +91,15 @@ img {
 }
 
 .brand img {
-  width: 42px;
-  height: 42px;
+  width: 54px;
+  height: 54px;
   border-radius: 50%;
   object-fit: cover;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(215, 174, 79, 0.34);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.08),
+    0 0 26px rgba(215, 174, 79, 0.18);
+  filter: drop-shadow(0 0 10px rgba(215, 174, 79, 0.22));
 }
 
 .site-nav {
@@ -154,9 +169,10 @@ img {
 }
 
 .hero-media img {
-  width: min(68vw, 780px);
-  opacity: 0.58;
-  filter: grayscale(0.3) contrast(1.05);
+  width: min(78vw, 860px);
+  opacity: 0.13;
+  filter: grayscale(0.22) contrast(1.12) blur(0.2px);
+  mix-blend-mode: screen;
 }
 
 .hero-content {
@@ -164,10 +180,40 @@ img {
   text-align: center;
 }
 
+.hero-logo-lockup {
+  position: relative;
+  display: grid;
+  width: min(52vw, 430px);
+  margin: 0 auto 22px;
+  place-items: center;
+}
+
+.hero-logo-lockup::before {
+  position: absolute;
+  inset: 16%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.16), rgba(215, 174, 79, 0.1) 42%, transparent 70%);
+  content: "";
+  filter: blur(22px);
+}
+
+.hero-logo-main {
+  position: relative;
+  width: 100%;
+  opacity: 0.94;
+  filter:
+    saturate(1.08)
+    contrast(1.08)
+    brightness(1.06)
+    drop-shadow(0 0 1px rgba(255, 255, 255, 0.85))
+    drop-shadow(0 0 16px rgba(255, 255, 255, 0.18))
+    drop-shadow(0 0 30px rgba(215, 174, 79, 0.24));
+}
+
 .eyebrow,
 .section-kicker {
   margin: 0 0 18px;
-  color: var(--silver);
+  color: var(--soft-gold);
   font-size: 0.76rem;
   font-weight: 600;
   letter-spacing: 0.22em;
@@ -209,6 +255,12 @@ h3 {
   margin-bottom: 12px;
   color: var(--white);
   font-size: clamp(1.2rem, 2.5vw, 2rem);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-shadow:
+    0 0 1px var(--gold),
+    0 0 18px rgba(215, 174, 79, 0.22);
+  -webkit-text-stroke: 0.35px rgba(215, 174, 79, 0.62);
 }
 
 .hero-service {
@@ -224,8 +276,8 @@ h3 {
   justify-content: center;
   min-height: 54px;
   padding: 0 30px;
-  border: 1px solid var(--soft-silver);
-  background: var(--white);
+  border: 1px solid rgba(242, 217, 138, 0.8);
+  background: linear-gradient(135deg, var(--white), #e7d7a0);
   color: var(--black);
   font-size: 0.78rem;
   font-weight: 700;
@@ -238,7 +290,7 @@ h3 {
   transform: translateY(-2px);
   background: transparent;
   color: var(--white);
-  border-color: var(--silver);
+  border-color: var(--soft-gold);
 }
 
 .button.secondary {
@@ -673,6 +725,10 @@ h3 {
     padding-top: 170px;
   }
 
+  .hero-logo-lockup {
+    width: min(78vw, 520px);
+  }
+
   .about-grid,
   .section-heading {
     grid-template-columns: 1fr;
@@ -703,6 +759,11 @@ h3 {
     min-width: 0;
   }
 
+  .brand img {
+    width: 46px;
+    height: 46px;
+  }
+
   .site-nav {
     font-size: 0.68rem;
     letter-spacing: 0.1em;
@@ -710,8 +771,31 @@ h3 {
 
   .hero {
     min-height: 92vh;
+    padding-top: 150px;
     padding-right: 18px;
     padding-left: 18px;
+  }
+
+  .hero-media img {
+    width: min(96vw, 560px);
+    opacity: 0.09;
+  }
+
+  .hero-logo-lockup {
+    width: min(88vw, 390px);
+    margin-bottom: 18px;
+  }
+
+  .hero-logo-main {
+    opacity: 0.96;
+  }
+
+  .hero-subtitle {
+    font-size: 1.18rem;
+  }
+
+  .hero-service {
+    font-size: 0.95rem;
   }
 
   h1 {
