@@ -72,5 +72,24 @@ if (contactForm && formStatus) {
   });
 }
 
+document.querySelectorAll(".design-media video").forEach((video) => {
+  video.muted = true;
+  video.playsInline = true;
+
+  const playVideo = () => {
+    const attempt = video.play();
+
+    if (attempt && typeof attempt.catch === "function") {
+      attempt.catch(() => {});
+    }
+  };
+
+  if (video.readyState >= 2) {
+    playVideo();
+  } else {
+    video.addEventListener("loadeddata", playVideo, { once: true });
+  }
+});
+
 setHeaderState();
 window.addEventListener("scroll", setHeaderState, { passive: true });
