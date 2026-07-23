@@ -586,6 +586,23 @@ h3 {
     var(--charcoal);
 }
 
+.design-media {
+  aspect-ratio: 1 / 1;
+  min-height: 0;
+}
+
+.design-media::before,
+.design-media::after {
+  content: none;
+}
+
+.design-media video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .design-card h3,
 .design-card p {
   padding-right: 22px;
