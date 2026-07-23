@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Contact Roberto The Setter at ROV Jewelry for professional diamond setting inquiries, appointments, and insured shipping details.">
   <title>Contact Roberto | ROV Jewelry</title>
-  <link rel="stylesheet" href="style.css?v=20260723-4">
+  <link rel="stylesheet" href="style.css?v=20260723-6">
   <style>
     body.contact-body {
       background: #030303;
@@ -52,6 +52,15 @@
       border: 1px solid rgba(255, 255, 255, 0.12) !important;
       background: rgba(9, 9, 9, 0.94) !important;
       box-shadow: 0 24px 80px rgba(0, 0, 0, 0.45) !important;
+    }
+
+    .inquiry-form.google-form-card {
+      display: block !important;
+      width: min(100%, 1100px) !important;
+    }
+
+    .google-form-frame {
+      width: 100% !important;
     }
 
     .form-intro,
@@ -201,66 +210,20 @@
           <p>Use this form for appointment requests, diamond setting work, custom projects, repairs, and insured shipping questions.</p>
         </div>
 
-        <form class="inquiry-form reveal" id="contact-form">
+        <div class="inquiry-form google-form-card reveal">
           <div class="form-intro">
             <span>Inquiry Form</span>
-            <p>Share a few details and Roberto will have the right context before the first conversation.</p>
+            <p>Share a few details through Roberto's secure Google Form. If the form does not load, open it directly below.</p>
           </div>
 
-          <div class="form-row">
-            <label for="name">Full Name</label>
-            <input type="text" id="name" name="name" autocomplete="name" required>
-          </div>
-
-          <div class="form-row">
-            <label for="email">Email Address</label>
-            <input type="email" id="email" name="email" autocomplete="email" required>
-          </div>
-
-          <div class="form-row">
-            <label for="phone">Phone Number</label>
-            <input type="tel" id="phone" name="phone" autocomplete="tel">
-          </div>
-
-          <div class="form-row">
-            <label for="location">Location</label>
-            <input type="text" id="location" name="location" placeholder="DMV area or shipping state">
-          </div>
-
-          <div class="form-row">
-            <label for="service">Project Type</label>
-            <select id="service" name="service" required>
-              <option value="">Select one</option>
-              <option>Diamond setting</option>
-              <option>Custom jewelry</option>
-              <option>Repair or restoration</option>
-              <option>CAD, rendering, or design</option>
-              <option>Insured shipping inquiry</option>
-              <option>Other</option>
-            </select>
-          </div>
-
-          <div class="form-row">
-            <label for="timeline">Preferred Timeline</label>
-            <select id="timeline" name="timeline">
-              <option value="">Select one</option>
-              <option>As soon as possible</option>
-              <option>Within 2 weeks</option>
-              <option>Within 1 month</option>
-              <option>Flexible</option>
-            </select>
-          </div>
-
-          <div class="form-row full">
-            <label for="message">Project Details</label>
-            <textarea id="message" name="message" rows="7" placeholder="Share stone details, setting style, piece type, budget range, repair notes, or shipping questions." required></textarea>
+          <div class="google-form-frame">
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdXj3KAAqW2BWiAXPs0d0y29zO1RO3YgOPMsi4-3_ABRNjzyg/viewform?embedded=true" title="ROV Jewelry inquiry Google Form" loading="lazy">Loading inquiry form...</iframe>
           </div>
 
           <div class="form-actions">
-            <button class="button form-button" type="submit">Submit Inquiry</button>
-            <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+            <a class="button form-button" href="https://forms.gle/D23h4zhJtt2FSrMy7" target="_blank" rel="noopener">Open Google Form</a>
           </div>
-        </form>
+        </div>
       </div>
     </section>
   </main>
@@ -270,6 +233,6 @@
     <span>Professional Diamond Setter</span>
   </footer>
 
-  <script src="script.js?v=20260723-4"></script>
+  <script src="script.js?v=20260723-6"></script>
 </body>
 </html>

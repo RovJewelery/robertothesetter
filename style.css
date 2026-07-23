@@ -715,6 +715,30 @@ h3 {
   color: var(--mid-gray);
 }
 
+.google-form-card {
+  display: block;
+  width: 100%;
+  max-width: 1100px;
+}
+
+.google-form-frame {
+  width: 100%;
+  height: min(78vh, 860px);
+  min-height: 640px;
+  margin-top: 28px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: #050505;
+}
+
+.google-form-frame iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: #050505;
+}
+
 .form-row {
   display: flex;
   min-width: 0;
